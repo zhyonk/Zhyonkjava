@@ -101,10 +101,7 @@ public class ClassHelper {
 				if(superclass.getName().equals(supername)){
 					//添加子类的到list中
 					list1.add(class1);
-//					System.out.println("...");
 				}
-//				System.out.println("父类"+superclass.hashCode());
-//				System.out.println("父类2"+interfacetype.hashCode());
 			}
 		}
 		
