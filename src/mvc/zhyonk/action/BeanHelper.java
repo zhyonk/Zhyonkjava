@@ -1,14 +1,12 @@
 package mvc.zhyonk.action;
 
 import java.lang.reflect.Field;
-import java.lang.reflect.Method;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map.Entry;
 
 import mvc.zhyonk.meta.Bean;
 import mvc.zhyonk.meta.Inject;
-import mvc.zhyonk.meta.Request;
 
 public class BeanHelper {
 	private static final HashMap<Class<?>,Object> beanmap = new HashMap<Class<?>,Object>();
@@ -47,15 +45,7 @@ public class BeanHelper {
 							
 							//如果有@inject注解，获取子类对象的实例
 							if(subclass!=null){
-								
-//								Method[] methods = key.getMethods();
-//								for (Method method : methods) {
-//									if(method.isAnnotationPresent(Request.class)){
-//										
-//									}
-//								}
 								Object object =subclass.newInstance();
-								System.out.println(object);
 								field.setAccessible(true);
 								field.set(value,object);
 							}
